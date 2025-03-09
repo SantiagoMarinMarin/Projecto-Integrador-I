@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.mycompany.projetcointegrador1;
+package co.edu.unac.integradorI.colegio;
 
 /**
  *
