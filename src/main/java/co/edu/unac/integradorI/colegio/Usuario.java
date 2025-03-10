@@ -1,3 +1,5 @@
+package co.edu.unac.integradorI.colegio;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -7,6 +9,7 @@
  *
  * @author Miguel
  */
+import co.edu.unac.integradorI.colegio.Administrador;
 import java.util.Scanner;
 
 public class Usuario {
