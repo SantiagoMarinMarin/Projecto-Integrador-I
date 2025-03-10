@@ -1,5 +1,5 @@
 
-package co.edu.unac.integrador1.login;
+package co.edu.unac.integradorI.login;
 import co.edu.unac.integrador1.votacion.Candidato;
 import javax.swing.JFileChooser;  // Para usar JFileChooser
 import javax.swing.ImageIcon;      // Para usar ImageIcon

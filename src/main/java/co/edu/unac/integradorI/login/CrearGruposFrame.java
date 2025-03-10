@@ -1,10 +1,11 @@
-package co.edu.unac.integrador1.login;
+package co.edu.unac.integradorI.login;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import co.edu.unac.integradorI.login.AgregarCandidatoFrame;
 import co.edu.unac.integrador1.votacion.Grupo;
 import co.edu.unac.integrador1.votacion.Candidato;
 import javax.swing.DefaultListModel;
