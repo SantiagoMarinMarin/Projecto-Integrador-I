@@ -3,8 +3,8 @@ package co.edu.unac.integradorI.login;
 
 import java.awt.Color;
 
-public class Login extends javax.swing.JFrame {
-    public Login() {
+public class FrmLogin extends javax.swing.JFrame {
+    public FrmLogin() {
         initComponents();
     }
     @SuppressWarnings("unchecked")
@@ -47,7 +47,6 @@ public class Login extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("Ingrese su identificación:");
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
@@ -64,23 +63,14 @@ public class Login extends javax.swing.JFrame {
 
         jTextField3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Ingrese su nombre de usuario");
         jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField3FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField3FocusLost(evt);
+                quitartextodeusuario(evt);
             }
         });
         jTextField3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jTextField3MousePressed(evt);
-            }
-        });
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField3MouseClicked(evt);
             }
         });
 
@@ -89,7 +79,6 @@ public class Login extends javax.swing.JFrame {
         jLabel7.setText("Nombre de usuario:");
 
         jPasswordField1.setForeground(new java.awt.Color(204, 204, 204));
-        jPasswordField1.setText("***************");
         jPasswordField1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jPasswordField1MousePressed(evt);
@@ -192,22 +181,10 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
-        jTextField3.setText("");
-    }//GEN-LAST:event_jTextField3FocusGained
-
-    private void jTextField3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusLost
-        if (jTextField3.getText().trim().isEmpty()) {
-    jTextField3.setText("Escribe aquí...");
-}
-    }//GEN-LAST:event_jTextField3FocusLost
-
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-    jTextField1.setText("");
+    if (jTextField3.getText().equals("Ingrese su nombre de usuario")) {
+    jTextField3.setText("");
+}
     }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
@@ -220,58 +197,53 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MousePressed
-       if ( jTextField3.getText().equals("Ingrese su nombre de usuario")){
-            jTextField3.setText("");
-            jTextField3.setForeground(Color.black);
-       }
-       if( jTextField1.getText().equals("Ingrese su identificación:")){
-            jTextField3.setText("");
-            jTextField1.setForeground(Color.gray);
-       }
-       
-       if ( String.valueOf(jPasswordField1.getPassword()).isEmpty()){
-            jPasswordField1.setText("***************");
-            jPasswordField1.setForeground(Color.gray);
-        }
-        
-      
-      
-    }//GEN-LAST:event_jTextField3MousePressed
-
     private void jTextField1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MousePressed
-        if( jTextField1.getText().equals("Ingrese su identificación:")){
+        if (jTextField1.getText().equals("Ingrese su identificación:")) {
             jTextField1.setText("");
-            jTextField1.setForeground(Color.black);
-       }
-       if (String.valueOf(jPasswordField1.getPassword()).isEmpty()){
+            jTextField1.setForeground(Color.BLACK);
+        }
+        if (jTextField3.getText().isEmpty()) {
+            jTextField3.setText("Ingrese su nombre de usuario");
+            jTextField3.setForeground(Color.GRAY);
+        }
+        if (String.valueOf(jPasswordField1.getPassword()).isEmpty()) {
             jPasswordField1.setText("***************");
-            jPasswordField1.setForeground(Color.gray);
-         }
-       if (jTextField3.getText().equals("Ingrese su nombre de usuario")){
-           jTextField3.setText("");
-           jTextField3.setForeground(Color.gray);
-       }
+            jPasswordField1.setForeground(Color.GRAY);
+        }
     }//GEN-LAST:event_jTextField1MousePressed
 
     private void jPasswordField1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPasswordField1MousePressed
-         if( jTextField1.getText().isEmpty()){
-        jTextField1.setText("Ingrese su nombre de usuario");
-        jTextField1.setForeground(Color.gray);
-         }
-        if ( !String.valueOf(jPasswordField1.getPassword()).equals("***************")){
-        jPasswordField1.setText("");
-        jPasswordField1.setForeground(Color.black);
+        if (String.valueOf(jPasswordField1.getPassword()).equals("***************")) {
+            jPasswordField1.setText("");
+            jPasswordField1.setForeground(Color.BLACK);
         }
-        if ( jTextField3.getText().isEmpty()){
+        if (jTextField1.getText().isEmpty()) {
             jTextField1.setText("Ingrese su identificación:");
-        jTextField3.setForeground(Color.gray);
+            jTextField1.setForeground(Color.GRAY);
+        }
+        if (jTextField3.getText().isEmpty()) {
+            jTextField3.setText("Ingrese su nombre de usuario");
+            jTextField3.setForeground(Color.GRAY);
         }
     }//GEN-LAST:event_jPasswordField1MousePressed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuarios:"+ jTextField3.getText() + " Esta es su identificación: " + jTextField1.getText()+ " Esta es su contraseña: "+ String.valueOf(jPasswordField1.getPassword()));
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void quitartextodeusuario(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quitartextodeusuario
+        if (jTextField3.getText().isEmpty()) {
+    jTextField3.setText("Ingrese su nombre de usuario");
+}
+
+    }//GEN-LAST:event_quitartextodeusuario
+
+    private void jTextField3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField3MouseClicked
+       if (jTextField3.getText().isEmpty()) {
+    jTextField3.setText("Ingrese su nombre de usuario");
+}
+
+    }//GEN-LAST:event_jTextField3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
